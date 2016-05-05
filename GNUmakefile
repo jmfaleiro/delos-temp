@@ -1,4 +1,4 @@
-CFLAGS=-O2 -g -Wall -Wextra -Werror -std=c++0x -w
+CFLAGS=-g -Wall -Wextra -Werror -std=c++0x
 CXX=g++
 
 INCLUDE=include
@@ -19,7 +19,7 @@ build/%.o: src/%.cc $(DEPSDIR)/stamp GNUmakefile
 	@$(CXX) $(CFLAGS) $(DEPCFLAGS) -I$(INCLUDE) -c -o $@ $<
 
 build/client: $(OBJECTS)
-	@$(CXX) $(CFLAGS) -o $@ $^ -L. libc_link.a
+	@$(CXX) $(CFLAGS) -o $@ $^ 
 
 $(DEPSDIR)/stamp:
 	@mkdir -p $(DEPSDIR)
@@ -28,4 +28,4 @@ $(DEPSDIR)/stamp:
 .PHONY: clean
 
 clean:
-	rm -rf build $(DEPSDIR) $(TESTOBJECTS) start/*.o
+	rm -rf build $(DEPSDIR) 
