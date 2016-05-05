@@ -263,6 +263,8 @@ void playback::play_forward(ChainAndEntry max_entry)
         
         /* Play the entry */
         entry->get_payload(&payload_sz, &payload);
+
+        /* JMF: Soham, here's the callback */
         _callback(0, NULL, payload, payload_sz);
         _cursor[max_entry.chain] = max_entry.entry;
 }
