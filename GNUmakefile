@@ -1,4 +1,4 @@
-CFLAGS=-g -Wall -Wextra -Werror -std=c++0x
+CFLAGS=-O2 -g -Wall -Wextra -Werror -std=c++0x
 CXX=g++
 
 INCLUDE=include
